@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Diagnostics.CodeAnalysis;
 using System.Runtime.CompilerServices;
+using System.Threading.Tasks;
 
 [assembly: InternalsVisibleTo("RefactoringDemoTests")]
 
@@ -10,27 +11,27 @@ namespace RefactoringDemo9
     public static class Program
     {
         [ExcludeFromCodeCoverage]
-        public static void Main()
+        public static async Task Main()
         {
-            Execute(nameof(NoRental), NoRental);
-            Execute(nameof(OneRegular2Days), OneRegular2Days);
-            Execute(nameof(OneRegular3Days), OneRegular3Days);
-            Execute(nameof(OneNewRelease1Day), OneNewRelease1Day);
-            Execute(nameof(OneNewRelease2Days), OneNewRelease2Days);
-            Execute(nameof(OneChildren3Days), OneChildren3Days);
-            Execute(nameof(OneChildren4Days), OneChildren4Days);
-            Execute(nameof(AllMovies), AllMovies);
+            await Execute(nameof(NoRental), NoRental);
+            await Execute(nameof(OneRegular2Days), OneRegular2Days);
+            await Execute(nameof(OneRegular3Days), OneRegular3Days);
+            await Execute(nameof(OneNewRelease1Day), OneNewRelease1Day);
+            await Execute(nameof(OneNewRelease2Days), OneNewRelease2Days);
+            await Execute(nameof(OneChildren3Days), OneChildren3Days);
+            await Execute(nameof(OneChildren4Days), OneChildren4Days);
+            await Execute(nameof(AllMovies), AllMovies);
         }
 
         [ExcludeFromCodeCoverage]
-        private static void Execute(string name, Action<Customer> action = null)
+        private static async Task Execute(string name, Action<Customer> action = null)
         {
             Customer customer = new Customer("CustomerName");
 
             action?.Invoke(customer);
 
-            Console.WriteLine($"{name}:\n{customer.Statement()}\n");
-            Console.WriteLine($"{name}:\n{customer.HtmlStatement()}\n");
+            Console.WriteLine($"{name}:\n{await customer.Statement()}\n");
+            Console.WriteLine($"{name}:\n{await customer.HtmlStatement()}\n");
         }
 
         internal static void NoRental(Customer customer)

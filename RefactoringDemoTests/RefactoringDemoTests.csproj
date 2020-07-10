@@ -48,7 +48,6 @@
     <ProjectReference Include="..\RefactoringDemo5\RefactoringDemo5.csproj" />
     <ProjectReference Include="..\RefactoringDemo6\RefactoringDemo6.csproj" />
     <ProjectReference Include="..\RefactoringDemo7\RefactoringDemo7.csproj" />
-    <ProjectReference Include="..\RefactoringDemo8a\RefactoringDemo8a.csproj" />
     <ProjectReference Include="..\RefactoringDemo8\RefactoringDemo8.csproj" />
     <ProjectReference Include="..\RefactoringDemo9\RefactoringDemo9.csproj" />
     <ProjectReference Include="..\RefactoringDemo\RefactoringDemo.csproj" />
