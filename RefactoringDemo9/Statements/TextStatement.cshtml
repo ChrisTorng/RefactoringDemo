@@ -1,0 +1,15 @@
+﻿@using RazorLight
+@using RefactoringDemo9
+@inherits TemplatePage<StatementData>
+@{
+    DisableEncoding = true;
+}
+Rental Record for @Model.Name
+@foreach ((string, double) rentalData in Model.RentalData)
+{
+    @('\t')@rentalData.Item1
+    @('\t')@rentalData.Item2
+    @("\r\n")
+}
+Amount owed is @Model.TotalCharge
+You earned @Model.TotalFrequentRenterPoints frequent renter points

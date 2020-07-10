@@ -1,0 +1,10 @@
+﻿@using RazorLight
+@using RefactoringDemo8a
+@inherits TemplatePage<StatementData>
+<h1>Rental Record for <em>@Model.Name</em></h1><p>
+@foreach ((string, double) rentalData in Model.RentalData)
+{
+    @rentalData.Item1<text>: </text>@rentalData.Item2<br>
+}
+<p>Amount owed is <em>@Model.TotalCharge</em><p>
+You earned <em>@Model.TotalFrequentRenterPoints</em> frequent renter points

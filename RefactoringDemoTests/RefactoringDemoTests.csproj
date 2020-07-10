@@ -1,0 +1,57 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <IsPackable>false</IsPackable>
+    <CodeAnalysisRuleSet>corSystem.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <!-- This group contains project properties for RazorLight on .NET Core -->
+    <PreserveCompilationContext>true</PreserveCompilationContext>
+    <!--<MvcRazorCompileOnPublish>false</MvcRazorCompileOnPublish>
+    <MvcRazorExcludeRefAssembliesFromPublish>false</MvcRazorExcludeRefAssembliesFromPublish>-->
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove=".editorconfig" />
+    <None Remove="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <AdditionalFiles Include=".editorconfig" />
+    <AdditionalFiles Include="stylecop.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.FxCopAnalyzers" Version="3.0.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.NET.Test.Sdk" Version="16.6.1" />
+    <PackageReference Include="MSTest.TestAdapter" Version="2.1.1" />
+    <PackageReference Include="MSTest.TestFramework" Version="2.1.1" />
+    <PackageReference Include="coverlet.collector" Version="1.2.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="StyleCop.Analyzers" Version="1.1.118">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\RefactoringDemo2\RefactoringDemo2.csproj" />
+    <ProjectReference Include="..\RefactoringDemo3\RefactoringDemo3.csproj" />
+    <ProjectReference Include="..\RefactoringDemo4\RefactoringDemo4.csproj" />
+    <ProjectReference Include="..\RefactoringDemo5\RefactoringDemo5.csproj" />
+    <ProjectReference Include="..\RefactoringDemo6\RefactoringDemo6.csproj" />
+    <ProjectReference Include="..\RefactoringDemo7\RefactoringDemo7.csproj" />
+    <ProjectReference Include="..\RefactoringDemo8a\RefactoringDemo8a.csproj" />
+    <ProjectReference Include="..\RefactoringDemo8\RefactoringDemo8.csproj" />
+    <ProjectReference Include="..\RefactoringDemo9\RefactoringDemo9.csproj" />
+    <ProjectReference Include="..\RefactoringDemo\RefactoringDemo.csproj" />
+  </ItemGroup>
+
+</Project>
