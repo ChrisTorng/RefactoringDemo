@@ -24,7 +24,7 @@ namespace RefactoringDemo9
         }
 
         [ExcludeFromCodeCoverage]
-        private static async Task Execute(string name, Action<Customer> action = null)
+        private static async Task Execute(string name, Action<Customer> action)
         {
             Customer customer = new Customer("CustomerName");
 

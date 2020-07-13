@@ -12,7 +12,7 @@ namespace RefactoringDemo8
         {
             this.Name = name;
             this.rentals = new List<Rental>();
-            this.UpdateRentals();
+            this.Rentals = this.rentals.AsReadOnly();
         }
 
         public string Name { get; } // 姓名

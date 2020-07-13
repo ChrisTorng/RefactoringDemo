@@ -23,7 +23,7 @@ namespace RefactoringDemo8
         }
 
         [ExcludeFromCodeCoverage]
-        private static void Execute(string name, Action<Customer> action = null)
+        private static void Execute(string name, Action<Customer> action)
         {
             Customer customer = new Customer("CustomerName");
 

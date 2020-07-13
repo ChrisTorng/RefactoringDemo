@@ -14,15 +14,15 @@ namespace RefactoringDemo8
         public Movie(string title, PriceCode priceCode)
         {
             this.Title = title;
-            this.SetPriceCode(priceCode);
+            this.price = GetPrice(priceCode);
         }
 
         public string Title { get; } // 名稱
 
-        private Price price;
+        private readonly Price price;
 
-        private void SetPriceCode(PriceCode priceCode) =>
-            this.price = priceCode switch
+        private static Price GetPrice(PriceCode priceCode) =>
+            priceCode switch
             {
                 PriceCode.Regular => new RegularPrice(),
                 PriceCode.NewRelease => new NewReleasePrice(),
